@@ -5,11 +5,11 @@
     <parent>
         <artifactId>netty-source-learning</artifactId>
         <groupId>org.example</groupId>
-        <version>4.1.79</version>
+        <version>5.0.0.Alpha4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>netty-transport</artifactId>
+    <artifactId>netty5-transport</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,15 +19,15 @@
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>netty-common</artifactId>
+            <artifactId>netty5-common</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>netty-buffer</artifactId>
+            <artifactId>netty5-buffer</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>netty-resolver</artifactId>
+            <artifactId>netty5-resolver</artifactId>
         </dependency>
     </dependencies>
 

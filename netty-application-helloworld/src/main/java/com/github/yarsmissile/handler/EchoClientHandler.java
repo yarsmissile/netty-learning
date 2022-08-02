@@ -1,17 +1,17 @@
 package com.github.yarsmissile.handler;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
+
+import io.netty5.buffer.api.Buffer;
+import io.netty5.channel.ChannelHandler;
+import io.netty5.channel.ChannelHandlerContext;
 
 import java.nio.charset.StandardCharsets;
 
-public class EchoClientHandler extends ChannelInboundHandlerAdapter {
+public class EchoClientHandler implements ChannelHandler {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ByteBuf byteBuf = Unpooled.copiedBuffer("你好，我是客户端", StandardCharsets.UTF_8);
-        ctx.writeAndFlush(byteBuf);
+        Buffer buffer = ctx.bufferAllocator().copyOf("你好，我是客户端", StandardCharsets.UTF_8);
+        ctx.writeAndFlush(buffer);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void channelExceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         cause.printStackTrace();
         ctx.close();
     }

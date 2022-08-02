@@ -1,20 +1,21 @@
 package com.github.yarsmissile.handler;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
+
+import io.netty5.buffer.api.Buffer;
+import io.netty5.channel.ChannelHandler;
+import io.netty5.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.charset.StandardCharsets;
 
-public class EchoServerHandler extends ChannelInboundHandlerAdapter {
+public class EchoServerHandler implements ChannelHandler {
     private static final Logger logger = LoggerFactory.getLogger(EchoServerHandler.class);
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         logger.info("来自客户端的消息");
-        ByteBuf msg1 = (ByteBuf) msg;
+        Buffer msg1 = (Buffer) msg;
         System.out.println(msg1.toString(StandardCharsets.UTF_8));
     }
 
@@ -24,7 +25,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void channelExceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         cause.printStackTrace();
         ctx.close();
     }

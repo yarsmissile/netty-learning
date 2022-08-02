@@ -5,11 +5,11 @@
     <parent>
         <artifactId>netty-source-learning</artifactId>
         <groupId>org.example</groupId>
-        <version>4.1.79</version>
+        <version>5.0.0.Alpha4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>netty-common</artifactId>
+    <artifactId>netty5-common</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -54,5 +54,4 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
 </project>

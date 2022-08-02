@@ -7,7 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>netty-source-learning</artifactId>
     <packaging>pom</packaging>
-    <version>4.1.79</version>
+    <version>5.0.0.Alpha4</version>
     <modules>
         <module>common</module>
         <module>buffer</module>
@@ -26,23 +26,23 @@
         <dependencies>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>netty-common</artifactId>
-                <version>4.1.79</version>
+                <artifactId>netty5-common</artifactId>
+                <version>5.0.0.Alpha4</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>netty-buffer</artifactId>
-                <version>4.1.79</version>
+                <artifactId>netty5-buffer</artifactId>
+                <version>5.0.0.Alpha4</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>netty-resolver</artifactId>
-                <version>4.1.79</version>
+                <artifactId>netty5-resolver</artifactId>
+                <version>5.0.0.Alpha4</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>netty-transport</artifactId>
-                <version>4.1.79</version>
+                <artifactId>netty5-transport</artifactId>
+                <version>5.0.0.Alpha4</version>
             </dependency>
 
             <dependency>
@@ -57,4 +57,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>
